@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mirrorly – Control</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="logo">
+        <div class="logo-mark">M</div>
+        <div>
+          <h1>Mirrorly</h1>
+          <p>Remote Control</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <label>Room Code</label>
+        <div class="code-row">
+          <input type="text" id="room-code" placeholder="Enter code" maxlength="6" />
+          <button id="join-btn" class="btn primary">Join</button>
+        </div>
+        <button id="create-btn" class="btn secondary full">Create New Room</button>
+      </div>
+
+      <div class="card status-card">
+        <div class="status-row">
+          <span>Status</span>
+          <span id="connection-status" class="badge offline">Disconnected</span>
+        </div>
+        <div class="status-row">
+          <span>Device</span>
+          <span id="device-name">—</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <p class="section-title">Controls</p>
+        <div class="btn-grid">
+          <button class="btn" data-action="home">Home</button>
+          <button class="btn" data-action="switcher">App Switcher</button>
+          <button class="btn" data-action="lock">Lock</button>
+          <button class="btn" data-action="screenshot">Screenshot</button>
+        </div>
+      </div>
+
+      <div class="sidebar-footer">
+        <p>Sideloaded agent required on iPhone</p>
+      </div>
+    </aside>
+
+    <!-- Main Stage -->
+    <main class="stage">
+      <div class="phone-frame">
+        <div class="phone-notch"></div>
+        <div class="phone-screen" id="screen">
+          <video id="remote-video" autoplay playsinline muted></video>
+          <div id="overlay" class="overlay">
+            <div class="overlay-content">
+              <h2>Waiting for iPhone…</h2>
+              <p>Install the Mirrorly agent on your iPhone,<br>then enter the room code.</p>
+            </div>
+          </div>
+        </div>
+        <div class="home-indicator"></div>
+      </div>
+
+      <div class="hint-bar">
+        <span>Click = Tap</span>
+        <span>Drag = Swipe</span>
+        <span>Type to send text</span>
+      </div>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
